@@ -3,8 +3,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 
 // internal imports
-const indexRouter = require("./routes/homeRoute");
-const homeRouter = require("./routes/homeRt");
+const homeRouter = require("./routes/homeRoute");
 
 const app = express();
 
