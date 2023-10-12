@@ -1,22 +1,13 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
-const express = require("express");
-const app = express();
-const jsxViewEngine = require("jsx-view-engine");
-const methodOverride = require("method-override");
-const { logRoutes } = require("./src/controllers/logs.js");
+const dotenv = require("dotenv");
 
-app.set("views", "src/views");
-app.set("view engine", "jsx");
-
-app.engine("jsx", jsxViewEngine());
-
-app.use(express.static("public"));
-app.use(methodOverride("_method"));
-app.use(express.urlencoded({ extended: false }));
-app.use((req, res, next) => {
-  next();
+dotenv.config({
+  path: `${__dirname}/.env`,
 });
+
+const app = require("./app");
+
+const port = process.env.PORT;
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -27,10 +18,8 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-app.use(logRoutes);
-
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(Date());
-  console.log(`listening on port 3000`);
-  console.log(`http://localhost:3000/`);
+  console.log(`listening on port ${port}`);
+  console.log(`http://localhost:${port}/`);
 });
