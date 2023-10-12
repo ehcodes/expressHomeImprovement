@@ -1,13 +1,7 @@
 const mongoose = require("mongoose");
 
-// required fields
-// home_id
-// bathroom1
-// kitchen
-
-const homeSchema = new mongoose.Schema(
+const taskSchema = new mongoose.Schema(
   {
-    // each user will only have access to one home, so the user ID associated to each home may be unique
     home_id: {
       type: String,
       unique: true,
@@ -47,6 +41,6 @@ const homeSchema = new mongoose.Schema(
   }
 );
 
-const Home = mongoose.model("Home", homeSchema);
+const Task = mongoose.model("Task", taskSchema);
 
-module.exports = Home;
+module.exports = Task;
