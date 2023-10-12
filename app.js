@@ -1,15 +1,13 @@
 // external imports
 const express = require("express");
-const cors = require("cors");
 const methodOverride = require("method-override");
 
 // internal imports
-const indexRouter = require("./routes/indexRt");
+const indexRouter = require("./routes/homeRoute");
 const homeRouter = require("./routes/homeRt");
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
 app.use(methodOverride("_method"));

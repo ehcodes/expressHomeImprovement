@@ -2,13 +2,7 @@ const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema(
   {
-    home_id: {
-      type: String,
-      unique: true,
-      trim: true,
-      required: true,
-    },
-    room: {
+    area: {
       type: String,
       trim: true,
       uppercase: true,
@@ -24,7 +18,8 @@ const taskSchema = new mongoose.Schema(
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: null,
     },
     taskStatus: {
       type: Boolean,
@@ -33,7 +28,8 @@ const taskSchema = new mongoose.Schema(
     },
     costEstimate: {
       type: Number,
-      required: false,
+      required: true,
+      default: null,
     },
   },
   {

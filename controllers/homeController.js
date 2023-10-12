@@ -1,6 +1,6 @@
 const Home = require("../models/homeSchema");
 
-exports.getAllHomes = async function (req, res) {
+exports.getAllHomes = async (req, res) => {
   try {
     const homes = await Home.find();
 
@@ -15,3 +15,6 @@ exports.getAllHomes = async function (req, res) {
     console.log(error);
   }
 };
+
+
+exports.seedHomes = 

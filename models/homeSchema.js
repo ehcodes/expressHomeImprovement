@@ -1,116 +1,95 @@
 const mongoose = require("mongoose");
+const Task = require("./taskSchema");
 
 const homeSchema = new mongoose.Schema(
   {
-    home_id: {
-      type: String,
-      unique:true,
-      trim: true,
-      required: true,
-    },
     bedroom1: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: "bedroom 1",
     },
     bedroom2: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     bedroom3: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
-    },
-    bedroom4: {
-      type: String,
-      trim: true,
-      uppercase: true,
-      required: true,
-      default: 'Not Added'
-    },
-    bedroom5: {
-      type: String,
-      trim: true,
-      uppercase: true,
-      required: true,
-      default: 'Not Added'
-    },
-    bedroom6: {
-      type: String,
-      trim: true,
-      uppercase: true,
-      required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     bathroom1: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
+      default: "bathroom",
     },
     bathroom2: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     bathroom3: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     kitchen: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: "kitchen",
     },
     dining: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     living: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     basement: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     attic: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
     },
     roof: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
-      default: 'Not Added'
+      default: undefined,
+    },
+    tasks: {
+      type: [Task],
+      default: undefined,
     },
   },
   {
