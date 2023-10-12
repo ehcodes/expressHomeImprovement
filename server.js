@@ -8,6 +8,7 @@ dotenv.config({
 const app = require("./app");
 
 const port = process.env.PORT;
+const db = process.env.DATABASE;
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -15,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 mongoose.connection.once("open", () => {
-  console.log("connected to mongo");
+  console.log(`connected to mongoDB database: (${db.name})`);
 });
 
 app.listen(port, () => {

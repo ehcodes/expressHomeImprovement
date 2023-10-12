@@ -1,6 +1,6 @@
 const Task = require("../models/taskSchema");
 
-exports.getAllTasks = async function (req, res) {
+const getAllTasks = async function (req, res) {
   try {
     const tasks = await Task.find();
 
@@ -15,3 +15,5 @@ exports.getAllTasks = async function (req, res) {
     console.log(error);
   }
 };
+
+module.exports = { taskRoutes: router };
