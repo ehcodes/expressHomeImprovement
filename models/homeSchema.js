@@ -1,10 +1,5 @@
 const mongoose = require("mongoose");
 
-// required fields
-  // home_id
-  // bathroom1
-  // kitchen
-
 const homeSchema = new mongoose.Schema(
   {
     // each user will only have access to one home, so the user ID associated to each home may be unique
@@ -18,37 +13,43 @@ const homeSchema = new mongoose.Schema(
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bedroom2: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bedroom3: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bedroom4: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bedroom5: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bedroom6: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bathroom1: {
       type: String,
@@ -60,49 +61,57 @@ const homeSchema = new mongoose.Schema(
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     bathroom3: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     kitchen: {
       type: String,
       trim: true,
       uppercase: true,
       required: true,
+      default: 'Not Added'
     },
     dining: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     living: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     basement: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     attic: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
     roof: {
       type: String,
       trim: true,
       uppercase: true,
-      required: false,
+      required: true,
+      default: 'Not Added'
     },
   },
   {
