@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const homeSchema = new mongoose.Schema(
   {
-    // each user will only have access to one home, so the user ID associated to each home may be unique
     home_id: {
       type: String,
       unique:true,
